@@ -31,7 +31,7 @@ public class ScanEarTagActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scan_ear_tag);
         ButterKnife.bind(this);
         String toolbarText = getIntent().getStringExtra("name");
-        type = getIntent().getIntExtra("type", 0);
+        type = Integer.valueOf(getIntent().getStringExtra("type"));
         tvToolbar.setText(toolbarText);
     }
 
@@ -42,9 +42,12 @@ public class ScanEarTagActivity extends AppCompatActivity {
                 int houseId = Integer.valueOf(SPUtils.getInstance().getString("houseId"));
                 if (type == 0) {   //录入
                     Intent intent = new Intent(ScanEarTagActivity.this, ScanEarTagDetailActivity.class);
+                    intent.putExtra("type", type+"");
                     startActivity(intent);
-                } else if (type == 1) {
-
+                } else if (type == 1) { //转群
+                    Intent intent = new Intent(ScanEarTagActivity.this, ScanEarTagDetailActivity.class);
+                    intent.putExtra("type", type+"");
+                    startActivity(intent);
                 }
 
                 break;

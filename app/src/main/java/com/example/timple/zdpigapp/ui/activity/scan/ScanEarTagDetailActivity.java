@@ -14,6 +14,10 @@ import android.widget.TextView;
 import com.example.timple.zdpigapp.R;
 import com.example.timple.zdpigapp.ui.activity.record.CFDetailActivity;
 import com.example.timple.zdpigapp.ui.activity.record.MZSDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.CFTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.HBQTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.MZSTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.YFSTurnToDetailActivity;
 import com.example.timple.zdpigapp.utils.SPUtils;
 import com.module.interaction.ModuleConnector;
 import com.nativec.tools.ModuleManager;
@@ -44,6 +48,7 @@ public class ScanEarTagDetailActivity extends AppCompatActivity {
     private List<String> readList;
     private int count = 0;
     private String houseId;
+    private int type;
 
     private ModuleConnector connector;
     private RFIDReaderHelper mReader;
@@ -62,11 +67,24 @@ public class ScanEarTagDetailActivity extends AppCompatActivity {
             if (tagEnd.mTotalRead == readList.size() && count == 1) {
 
                 Intent intent = null;
-                if (houseId.equals("10")) {
-                    intent = new Intent(ScanEarTagDetailActivity.this, MZSDetailActivity.class);
-                } else if (houseId.equals("11")) {
-                    intent = new Intent(ScanEarTagDetailActivity.this, CFDetailActivity.class);
+                if (type == 0) {
+                    if (houseId.equals("10")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, MZSDetailActivity.class);
+                    } else if (houseId.equals("11")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, CFDetailActivity.class);
+                    }
+                } else if (type == 1) {
+                    if (houseId.equals("10")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, MZSTurnToDetailActivity.class);
+                    } else if (houseId.equals("11")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, CFTurnToDetailActivity.class);
+                    } else if (houseId.equals("12")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, YFSTurnToDetailActivity.class);
+                    } else if (houseId.equals("13")) {
+                        intent = new Intent(ScanEarTagDetailActivity.this, HBQTurnToDetailActivity.class);
+                    }
                 }
+
                 Bundle bundle = new Bundle();
                 bundle.putString("ear_tag", readList.get(0));
                 intent.putExtras(bundle);
@@ -83,6 +101,7 @@ public class ScanEarTagDetailActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         houseId = SPUtils.getInstance().getString("houseId");
+        type = Integer.valueOf(getIntent().getStringExtra("type")); //类型：录入；转群
         readList = new ArrayList<>();
 
         llPro.setVisibility(View.VISIBLE);

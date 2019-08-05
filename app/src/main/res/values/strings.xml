@@ -338,4 +338,7 @@
     <string name="membank">Membank:</string>
     <string name="clear_target_mask">清理标签标示设置</string>
     <string name="setting_mask_tag">设置标签Mask</string>
+
+    <string name="title_activity_cfturn_to_detail">CFTurnToDetailActivity</string>
+    <string name="title_activity_yfsturn_to_detail">YFSTurnToDetailActivity</string>
 </resources>

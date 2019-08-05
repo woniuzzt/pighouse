@@ -23,4 +23,6 @@ public class Url {
     public static String UPDATE_VERSION = "api/app/getLastVersion";
 
     public static String ACCOUNT_TOKEN = "api/account/checkToken";
+
+   public static  String TURN_GROUP = "/api/hog/changeHogHouse";
 }

@@ -42,7 +42,7 @@ public class PigHouseAdapter extends RecyclerView.Adapter<PigHouseAdapter.ViewHo
                 public void onClick(View v) {
                     SPUtils.getInstance().put("houseId", list.get(position).getId());
                     Intent intent = new Intent(context, ScanEarTagActivity.class);
-                    intent.putExtra("type", type);
+                    intent.putExtra("type", type + "");
                     if (type == 0)
                         intent.putExtra("name", list.get(position).getName());
                     else if (type == 1)
