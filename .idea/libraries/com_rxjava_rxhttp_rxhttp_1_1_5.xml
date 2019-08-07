@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.rxjava.rxhttp:rxhttp-1.1.5">
+    <CLASSES>
+      <root url="file://D:/Users/HP/.gradle/caches/transforms-1/files-1.1/rxhttp-1.1.5.aar/68eb6388bd35916c76564f9c6c9a4dd3/res" />
+      <root url="jar://D:/Users/HP/.gradle/caches/transforms-1/files-1.1/rxhttp-1.1.5.aar/68eb6388bd35916c76564f9c6c9a4dd3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/Users/HP/.gradle/caches/modules-2/files-2.1/com.rxjava.rxhttp/rxhttp/1.1.5/152e7e89ba62a53304e319f338027957817a483a/rxhttp-1.1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -76,7 +76,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 //    compile files('src/main/libs/jxl.jar')
 
-    implementation 'com.rxjava.rxhttp:rxhttp:1.1.0'
+    implementation 'com.rxjava.rxhttp:rxhttp:1.1.+'
     annotationProcessor 'com.rxjava.rxhttp:rxhttp-compiler:1.1.0' //注解处理器，生成RxHttp类
     implementation 'com.rxjava.rxlife:rxlife:1.0.8'  //页面销毁，关闭请求，非必须
     implementation 'com.android.support:recyclerview-v7:26.0.0'
