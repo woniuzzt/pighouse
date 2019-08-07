@@ -30,6 +30,7 @@ import com.example.timple.zdpigapp.Url;
 import com.example.timple.zdpigapp.entity.BaseData;
 import com.example.timple.zdpigapp.entity.UpdateVersionEntity;
 import com.example.timple.zdpigapp.ui.activity.RecordActivity;
+import com.example.timple.zdpigapp.ui.activity.scan.ScanEarTagActivity;
 import com.example.timple.zdpigapp.ui.activity.turn.TurnGroupActivity;
 import com.example.timple.zdpigapp.utils.BaseActivity;
 import com.example.timple.zdpigapp.utils.SPUtils;
@@ -353,7 +354,10 @@ public class MainActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_scan:
-                Toast.makeText(MainActivity.this, "该功能暂未开放,敬请期待", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "该功能暂未开放,敬请期待", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MainActivity.this, ScanEarTagActivity.class);
+                intent.putExtra("type", 2 + "");
+                startActivity(intent);
                 break;
             case R.id.btn_record:
                 intent = new Intent(MainActivity.this, RecordActivity.class);

@@ -25,4 +25,6 @@ public class Url {
     public static String ACCOUNT_TOKEN = "api/account/checkToken";
 
    public static  String TURN_GROUP = "/api/hog/changeHogHouse";
+
+   public static  String UPDATEINFOBYTYPE = "/api/hog/updateInfoByType";
 }

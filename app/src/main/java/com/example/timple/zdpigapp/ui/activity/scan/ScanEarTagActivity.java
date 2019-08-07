@@ -48,6 +48,10 @@ public class ScanEarTagActivity extends AppCompatActivity {
                     Intent intent = new Intent(ScanEarTagActivity.this, ScanEarTagDetailActivity.class);
                     intent.putExtra("type", type+"");
                     startActivity(intent);
+                }else if (type == 2){//扫描
+                    Intent intent = new Intent(ScanEarTagActivity.this, ScanEarTagDetailActivity.class);
+                    intent.putExtra("type", type+"");
+                    startActivity(intent);
                 }
 
                 break;

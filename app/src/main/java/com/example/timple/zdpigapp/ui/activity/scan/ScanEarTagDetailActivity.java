@@ -12,12 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.timple.zdpigapp.R;
+import com.example.timple.zdpigapp.ui.activity.SingleQueryActivity;
 import com.example.timple.zdpigapp.ui.activity.record.CFDetailActivity;
 import com.example.timple.zdpigapp.ui.activity.record.MZSDetailActivity;
-import com.example.timple.zdpigapp.ui.activity.turn.CFTurnToDetailActivity;
-import com.example.timple.zdpigapp.ui.activity.turn.HBQTurnToDetailActivity;
-import com.example.timple.zdpigapp.ui.activity.turn.MZSTurnToDetailActivity;
-import com.example.timple.zdpigapp.ui.activity.turn.YFSTurnToDetailActivity;
+
 import com.example.timple.zdpigapp.utils.SPUtils;
 import com.module.interaction.ModuleConnector;
 import com.nativec.tools.ModuleManager;
@@ -83,6 +81,8 @@ public class ScanEarTagDetailActivity extends AppCompatActivity {
                     } else if (houseId.equals("13")) {
                         intent = new Intent(ScanEarTagDetailActivity.this, HBQTurnToDetailActivity.class);
                     }
+                } else if (type == 2){
+                    intent = new Intent(ScanEarTagDetailActivity.this, SingleQueryActivity.class);
                 }
 
                 Bundle bundle = new Bundle();

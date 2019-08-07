@@ -19,17 +19,16 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.main.MainActivity"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activity.RecordActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.record.MZSDetailActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.scan.ScanEarTagActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.main.LoginActivity"
             android:screenOrientation="portrait">
@@ -39,38 +38,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.main.RegisterActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.scan.ScanEarTagDetailActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.activity.record.CFDetailActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.activity.main.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.scan.ScanEarTagDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.record.CFDetailActivity"
+            android:screenOrientation="portrait" />
 
         <receiver android:name=".ui.activity.InstallReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
-        <activity android:name=".ui.activity.turn.MZSTurnToDetailActivity"
+
+        <activity
+            android:name=".ui.activity.turn.MZSTurnToDetailActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.activity.turn.CFTurnToDetailActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_cfturn_to_detail"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.activity.turn.YFSTurnToDetailActivity"
-            android:screenOrientation="portrait"
             android:label="@string/title_activity_yfsturn_to_detail"
-            android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".ui.activity.turn.HBQTurnToDetailActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".ui.activity.turn.TurnGroupActivity"
-            android:screenOrientation="portrait"></activity>
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.turn.HBQTurnToDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.turn.TurnGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.EditActivity"></activity>
     </application>
 
 </manifest>
