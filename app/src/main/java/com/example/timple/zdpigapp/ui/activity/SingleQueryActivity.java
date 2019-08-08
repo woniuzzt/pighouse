@@ -171,7 +171,6 @@ public class SingleQueryActivity extends AppCompatActivity {
                 });
     }
 
-    private boolean isEdit;
     private int type = -1;
 
     @OnClick({R.id.tv_pzxx, R.id.tv_jbxx, R.id.tv_ccxx, R.id.tv_yzxx, R.id.tv_yfxx, R.id.btn_return, R.id.btn_edit})
@@ -180,59 +179,71 @@ public class SingleQueryActivity extends AppCompatActivity {
 
             case R.id.tv_jbxx://基本信息
                 type = 0;
-                tvBirth.setText(base_info.getBirth());
-                tvFl.setText(base_info.getCategory());
-                tvSszc.setText(base_info.getOwner_hog_farm());
+                if (!TextUtils.isEmpty(base_info.getBirth()))
+                    tvBirth.setText(base_info.getBirth());
+                if (!TextUtils.isEmpty(base_info.getCategory()))
+                    tvFl.setText(base_info.getCategory());
+                if (!TextUtils.isEmpty(base_info.getOwner_hog_farm()))
+                    tvSszc.setText(base_info.getOwner_hog_farm());
                 llJbxx.setVisibility(View.VISIBLE);
+                btnEdit.setEnabled(true);
                 break;
             case R.id.tv_yfxx://育肥
                 type = 1;
                 tvClrq.setText(fatten_info.get(0).getResult());
                 tvClz.setText(fatten_info.get(1).getResult());
                 llYfxx.setVisibility(View.VISIBLE);
+                btnEdit.setEnabled(true);
                 break;
             case R.id.tv_pzxx://配种信息
                 type = 2;
                 rcvPzxx.setVisibility(View.VISIBLE);
-
+                btnEdit.setEnabled(true);
                 break;
 
             case R.id.tv_ccxx://产仔信息
                 type = 3;
                 rcvCcxx.setVisibility(View.VISIBLE);
+                btnEdit.setEnabled(true);
                 break;
 
             case R.id.tv_yzxx://育种信息
                 type = 4;
                 rcvYzxx.setVisibility(View.VISIBLE);
+                btnEdit.setEnabled(true);
                 break;
             case R.id.btn_return:
                 finish();
                 break;
             case R.id.btn_edit:
-                Intent intent = new Intent(SingleQueryActivity.this, EditActivity.class);
-                intent.putExtra("type",type);
-                switch (type) {
-                    case 0:
-                        intent.putExtra("info", base_info);
-                        break;
-                    case 1:
-                        intent.putExtra("info", (Serializable) fatten_info);
-                        break;
-                    case 2:
-                        intent.putExtra("info", (Serializable) breed_info);
-                        break;
-                    case 3:
-                        intent.putExtra("info", (Serializable) litter_info);
+                if (btnEdit.isEnabled()) {
+                    Intent intent = new Intent(SingleQueryActivity.this, EditActivity.class);
+                    intent.putExtra("type", type);
+                    switch (type) {
+                        case 0:
+                            intent.putExtra("info", base_info);
+                            break;
+                        case 1:
+                            intent.putExtra("info", (Serializable) fatten_info);
+                            break;
+                        case 2:
+                            intent.putExtra("info", (Serializable) breed_info);
+                            break;
+                        case 3:
+                            intent.putExtra("info", (Serializable) litter_info);
 
-                        break;
-                    case 4:
-                        intent.putExtra("info", (Serializable) breeding_info);
-                        break;
+                            break;
+                        case 4:
+                            intent.putExtra("info", (Serializable) breeding_info);
+                            break;
 
+                    }
+
+                    intent.putExtra("ear_tag", ear_tag);
+                    intent.putExtra("id", base_info.getId());
+                    startActivity(intent);
                 }
 
-                startActivity(intent);
                 break;
         }
     }

@@ -16,6 +16,10 @@ import com.example.timple.zdpigapp.ui.activity.SingleQueryActivity;
 import com.example.timple.zdpigapp.ui.activity.record.CFDetailActivity;
 import com.example.timple.zdpigapp.ui.activity.record.MZSDetailActivity;
 
+import com.example.timple.zdpigapp.ui.activity.turn.CFTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.HBQTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.MZSTurnToDetailActivity;
+import com.example.timple.zdpigapp.ui.activity.turn.YFSTurnToDetailActivity;
 import com.example.timple.zdpigapp.utils.SPUtils;
 import com.module.interaction.ModuleConnector;
 import com.nativec.tools.ModuleManager;

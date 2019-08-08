@@ -534,7 +534,8 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="40dp"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
+            android:enabled="false"
+            android:background="@drawable/btn_edit_selector"
             android:text="编辑"
             android:textColor="@color/white"
             android:visibility="visible" />
